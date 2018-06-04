@@ -18,7 +18,13 @@ Let’s summarize what should be done in this project to simulate a home service
 
 Once you get a working home service robot, check the Project Rubric to see if it meets the specifications listed. If you meet the specifications, then you are ready to submit the project!
 
+### Here are the files that you need to include in your project submission
 
+- Your catkin_ws/src directory which includes: 
+  - The official ROS packages that you downloaded
+  - C++ packages and nodes 
+  - World files: gazebo world, pgm, and yaml files
+  - Shell scripts
 
 
 
