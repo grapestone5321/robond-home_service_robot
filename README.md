@@ -27,7 +27,9 @@ Once you get a working home service robot, check the Project Rubric to see if it
   - Shell scripts
 
 
+## Home Service Robot Project
 
+Here's a detailed list of the steps in this project, check them off as you complete them:
 
 
 
