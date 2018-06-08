@@ -40,7 +40,7 @@ Here's a detailed list of the steps in this project, check them off as you compl
 - Put it all Together
 
 
-## Write a Shell Script
+## 1.Write a Shell Script
 
 Now it's your turn to experiment with shell scripts and customize them by following these steps:
 - Install xterm with sudo apt-get install xterm
@@ -50,7 +50,7 @@ Now it's your turn to experiment with shell scripts and customize them by follow
 - Launch the shell script file with ./launch.sh
 
 
-## Catkin Workspace Setup
+## 2.Catkin Workspace Setup
 
 Follow these instructions to prepare your catkin_ws/src directory for the project. Check off each step as you complete it!
 - Update your system with sudo apt-get update
@@ -60,7 +60,7 @@ Follow these instructions to prepare your catkin_ws/src directory for the projec
 - Install all the packages dependencies
 - Build your catkin workspace
 
-## Building Editor
+## 3.Building Editor
 
 Follow these steps to successfully design your environment with the Building Editor in Gazebo:
 - Open a terminal and launch Gazebo
@@ -70,7 +70,7 @@ Follow these steps to successfully design your environment with the Building Edi
 - Save the Building Editor environment and go back to Gazebo
 - Save the Gazebo environment to the World directory of your catkin_ws/src
 
-## Testing SLAM
+## 4.Testing SLAM
 
 To manually test SLAM, create a test_slam.sh shell script that launches these files:
 - The turtlebot_world.launch file to deploy a turtlebot in your environment
@@ -78,7 +78,7 @@ To manually test SLAM, create a test_slam.sh shell script that launches these fi
 - The view_navigation.launch to observe the map in rviz
 - The keyboard_teleop.launch to manually control the robot with keyboard commands
 
-## Wall Follower
+## 5.Wall Follower
 
 Follow these instructions to autonomously map your environment:
 - Create a wall_follower package
@@ -92,7 +92,7 @@ Follow these instructions to autonomously map your environment:
 - Once you are satisfied with the map, kill the wall_follower terminal and save your map in both pgm and yaml formats in the World directory of your catkin_ws/src.
 
 
-## Testing Navigation
+## 6.Testing Navigation
 
 Write a test_navigation.sh shell script that launches these files:
 - Add turtlebot_world.launch to deploy a turtlebot in your environment
@@ -100,7 +100,7 @@ Write a test_navigation.sh shell script that launches these files:
 - Add view_navigation.launch to observe the map in rviz
 
 
-## Reaching Multiple Goals
+## 7.Reaching Multiple Goals
 
 Follow these instructions to autonomously command the robot to travel to both desired pickup and drop off zones:
 Task List
@@ -115,7 +115,7 @@ Task List
 - Create a pick_objects.sh script file that launches the turtlebot, AMCL, rviz and your pick_objects node.
 
 
-## Modeling Virtual Objects
+## 8.Modeling Virtual Objects
 
 Follow these steps to create a virtual object in rviz:
 - Create an add_markers package with roscpp and visualization_msgs dependencies
@@ -129,7 +129,7 @@ Follow these steps to create a virtual object in rviz:
 - Launch your shell script and manually add a Marker in rviz
 
 
-## Putting it all Together
+## 9.Putting it all Together
 
 Follow these steps to successfully simulate a home service robot:
 - Edit the add_markers node and subscribe to odometry values
