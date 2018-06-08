@@ -30,7 +30,13 @@ Once you get a working home service robot, check the Project Rubric to see if it
 ## Home Service Robot Project
 
 Here's a detailed list of the steps in this project, check them off as you complete them:
-
-
+- Write a Shell Script
+- Design your environment with Building Editor
+- Test SLAM
+- Wall Follower
+- Test Navigation
+- Reach Multiple Goals
+- Model Virtual Objects
+- Put it all Together
 
 
