@@ -40,3 +40,16 @@ Here's a detailed list of the steps in this project, check them off as you compl
 - Put it all Together
 
 
+## Write a Shell Script
+
+Now it's your turn to experiment with shell scripts and customize them by following these steps:
+- Install xterm with sudo apt-get install xterm
+- Create a launch.sh file
+- Write one or multiple commands to be executed by the terminals
+- Turn your script into an executable one with chmod +x launch.sh
+- Launch the shell script file with ./launch.sh
+
+
+
+
+
