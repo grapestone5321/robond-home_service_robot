@@ -70,3 +70,74 @@ Follow these steps to successfully design your environment with the Building Edi
 - Save the Building Editor environment and go back to Gazebo
 - Save the Gazebo environment to the World directory of your catkin_ws/src
 
+## Testing SLAM
+
+To manually test SLAM, create a test_slam.sh shell script that launches these files:
+- The turtlebot_world.launch file to deploy a turtlebot in your environment
+- The gmapping_demo.launch or run slam_gmapping to perform SLAM
+- The view_navigation.launch to observe the map in rviz
+- The keyboard_teleop.launch to manually control the robot with keyboard commands
+
+## Wall Follower
+
+Follow these instructions to autonomously map your environment:
+- Create a wall_follower package
+- Create a wall_follower C++ node
+- Edit the wall_follower C++ node name
+- Edit the wall_follower C++ subscriber and publisher topics name
+- Write a wall_follower.sh shell script that launch the turtlebot_world.launch, gmapping_demo.launch, view_navigation.launch, and the wall_follower node
+- Edit the CMakeLists.txt file and add directories, executable, and target link libraries
+- Build your catkin_ws
+- Run your wall_follower.sh shell script to autonomously map the environment
+- Once you are satisfied with the map, kill the wall_follower terminal and save your map in both pgm and yaml formats in the World directory of your catkin_ws/src.
+
+
+## Testing Navigation
+
+Write a test_navigation.sh shell script that launches these files:
+- Add turtlebot_world.launch to deploy a turtlebot in your environment
+- Add amcl_demo.launch to localize the turtlebot
+- Add view_navigation.launch to observe the map in rviz
+
+
+## Reaching Multiple Goals
+
+Follow these instructions to autonomously command the robot to travel to both desired pickup and drop off zones:
+Task List
+- Create a pick_objects package with move_base_msgs, actionlib, and roscpp dependencies
+- Create a pick_objects C++ node
+- Edit the C++ node and modify it's node name and frame_id
+- Modify the C++ node and publish a second goal for the robot to reach
+- Display messages to track if robot successfully reached both zones
+- Pause 5 seconds after reaching the pickup zone
+- Edit the CMakeLists.txt file and add directories, executable, and target link libraries
+- Build your catkin_ws
+- Create a pick_objects.sh script file that launches the turtlebot, AMCL, rviz and your pick_objects node.
+
+
+## Modeling Virtual Objects
+
+Follow these steps to create a virtual object in rviz:
+- Create an add_markers package with roscpp and visualization_msgs dependencies
+- Create an add_markers C++ node
+- Copy the C++ code and edit the node name to add_markers
+- Edit the frame_id
+- Modify the C++ code to publish a single shape as describer earlier
+- Edit the CMakeLists.txt file and add the executable, and libraries
+- Build the catkin_ws
+- Create an add_marker.sh shell script that launches the turtlebot, AMCL, rviz, and your add_markers node.
+- Launch your shell script and manually add a Marker in rviz
+
+
+## Putting it all Together
+
+Follow these steps to successfully simulate a home service robot:
+- Edit the add_markers node and subscribe to odometry values
+- Modify the C++ node as described earlier
+- Build your catkin_ws
+- Add markers to the view_navigation.launch file and save it as a new rviz configuration
+- Create a home_service.sh file that launches the turtlebot, AMCL, rviz config file, pick_objects and add_markers nodes
+
+
+
+
