@@ -60,4 +60,13 @@ Follow these instructions to prepare your catkin_ws/src directory for the projec
 - Install all the packages dependencies
 - Build your catkin workspace
 
+## Building Editor
+
+Follow these steps to successfully design your environment with the Building Editor in Gazebo:
+- Open a terminal and launch Gazebo
+- Click edit and launch the Building Editor
+- Design a simple environment
+- Apply textures or colors
+- Save the Building Editor environment and go back to Gazebo
+- Save the Gazebo environment to the World directory of your catkin_ws/src
 
