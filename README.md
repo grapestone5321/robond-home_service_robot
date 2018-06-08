@@ -50,6 +50,14 @@ Now it's your turn to experiment with shell scripts and customize them by follow
 - Launch the shell script file with ./launch.sh
 
 
+## Catkin Workspace Setup
 
+Follow these instructions to prepare your catkin_ws/src directory for the project. Check off each step as you complete it!
+- Update your system with sudo apt-get update
+- Install the ROS navigation system with sudo apt-get install ros-kinetic-navigation
+- Create a catkin_ws if you haven’t done so already
+- Grab all the official ROS packages from GitHub
+- Install all the packages dependencies
+- Build your catkin workspace
 
 
