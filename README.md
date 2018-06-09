@@ -206,4 +206,36 @@ The launch.sh shell script launches three terminals and issues one or multiple c
 After launching this script, we’ll have three open xterm terminals, and we will be able to track any errors or bugs that occur. To recap, this script will open the first terminal and launch gazebo. Then it will pause for 5 seconds and open a second terminal to launch the ROS master. It will pause for another 5 seconds and, finally, open a third terminal to launch RVIZ. 
 
 
+## Catkin Workspace
 
+To program your home service robot, you will need to interface it with different ROS packages. Some of these packages are official ROS packages which offer great tools and others are packages that you’ll create. The goal of this section is to prepare and build your catkin workspace. 
+
+Here’s the list of the official ROS packages that you will need to grab, and other packages and directories that you’ll need to create at a later stage as you go through the project. Your catkin_ws/src directory should look as follows: 
+
+### Official ROS packages
+
+Import these packages now and install them in the src directory of your catkin workspace. Be sure to clone the full GitHub directory and not just the package itself. 
+
+1. gmapping: With the gmapping_demo.launch file, you can easily perform SLAM and build a map of the environment with a robot equipped with laser range finder sensors or RGB-D cameras.
+
+2. turtlebot_teleop: With the keyboard_teleop.launch file, you can manually control a robot using keyboard commands.
+
+3. turtlebot_rviz_launchers: With the view_navigation.launch file, you can load a preconfigured rviz workspace. You’ll save a lot of time by launching this file, because it will automatically load the robot model, trajectories, and map for you. 
+
+4. turtlebot_gazebo: With the turtlebot_world.launch you can deploy a turtlebot in a gazebo environment by linking the world file to it. 
+
+### Your Packages and Directories
+
+You’ll install these packages and create the directories as you go through the project.
+
+1. World: Inside this directory, you will store your gazebo world file and the map generated from SLAM.
+
+2. ShellScripts: Inside this directory, you’ll store your shell scripts. 
+
+3. RvizConfig: Inside this directory, you’ll store your customized rviz configuration files.
+
+4. wall_follower: You will store a wall_follower node that will autonomously drive your robot around to perform SLAM.
+
+5. pick_objects: You will write a node that commands your robot to drive to the pickup and drop off zones. 
+
+6. add_markers: You will write a node that model the object with a marker in rviz. 
