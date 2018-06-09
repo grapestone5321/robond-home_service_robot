@@ -152,4 +152,58 @@ Therefore, for this project, you have the choice of working on the Udacity Works
 
 Working in the provided Udacity Workspace is highly recommended, because it's has a dedicated GPU and we can provide support for it. If you choose to work in the Udacity Workspace, refer to these instructions, move to the next concept, enable GPU, and GO TO DESKTOP!
 
+## Shell Scripts
+
+### Launching Nodes in ROS
+
+For this project, you’ll rely heavily on shell scripts to launch and run nodes. When working with ROS, there are three common ways to launch/run nodes included in different packages:
+
+1. Opening multiple terminals and launching/running a single node in each terminal.
+- Advantage: You’ll be able to monitor the output of each node and easily identify bugs and errors. 
+- Disadvantage: You’ll have many terminals open and you’ll have to repeat this procedure everytime you want to run or debug your project which is time consuming especially for large projects.
+
+2. Writing a single launch file that groups all the nodes in all the packages and launching it within a single terminal. 
+- Advantage: You’ll save a lot of time by running a single command. 
+- Disadvantage: You won’t be able to easily track errors and bugs generated from different nodes. 
+
+3. Writing a shell script file and programming it to launch one or many nodes each in a separate terminal. 
+- Advantage: This technique is highly recommended since you’ll have the power to easily track the output of different nodes and you’ll save time by running a single command to launch all the nodes in the project. 
+- Disadvantage: None.
+
+### Launch File
+
+Let’s start by taking a look at the launch.sh script where it’s launching both gazebo and rviz in separate instances of xterm terminals:
+
+``` bash
+#!/bin/sh
+xterm  -e  " gazebo " &
+sleep 5
+xterm  -e  " source /opt/ros/kinetic/setup.bash; roscore" & 
+sleep 5
+xterm  -e  " rosrun rviz rviz"
+``` 
+
+The launch.sh shell script launches three terminals and issues one or multiple commands in each terminal. Let’s break down this script to understand the meaning of each line.
+
+1- #!/bin/sh
+- This statement is called a shebang. It must be included in every shell script you write since it specifies the full path of the UNIX interpreter to execute it. 
+
+2- xterm -e " gazebo " &
+- With the xterm -e statement, we are launching a new instance of an xterminal. Inside this terminal, we are launching gazebo. Following, we are adding an ampersand & to indicate that another instance of an xterm terminal will be created in a separate statement. 
+
+3 - sleep 5
+- We are pausing this script for 5 seconds. 
+
+4- xterm -e " source /opt/ros/kinetic/setup.bash; roscore" &
+- We are launching a second instance of the xterm terminal. Inside this terminal, we are sourcing the ROS workspace and launching the ROS master. 
+
+5 - sleep 5
+- We are pausing this script again for 5 seconds.
+
+6- xterm -e " rosrun rviz rviz"
+- We are launching a third instance of the xterm terminal, and running rviz. 
+
+After launching this script, we’ll have three open xterm terminals, and we will be able to track any errors or bugs that occur. To recap, this script will open the first terminal and launch gazebo. Then it will pause for 5 seconds and open a second terminal to launch the ROS master. It will pause for another 5 seconds and, finally, open a third terminal to launch RVIZ. 
+
+
 
