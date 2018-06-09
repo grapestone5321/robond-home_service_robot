@@ -239,3 +239,59 @@ You’ll install these packages and create the directories as you go through the
 5. pick_objects: You will write a node that commands your robot to drive to the pickup and drop off zones. 
 
 6. add_markers: You will write a node that model the object with a marker in rviz. 
+
+## Package Tree
+
+Here's a high level overview of how you catkin_ws/src directory should look like:
+
+``` bash
+    ├──                                # Official ROS packages
+    |
+    ├── slam_gmapping                  # gmapping_demo.launch file                   
+    │   ├── gmapping
+    │   ├── ...
+    ├── turtlebot                      # keyboard_teleop.launch file
+    │   ├── turtlebot_teleop
+    │   ├── ...
+    ├── turtlebot_interactions         # view_navigation.launch file      
+    │   ├── turtlebot_rviz_launchers
+    │   ├── ...
+    ├── turtlebot_simulator            # turtlebot_world.launch file 
+    │   ├── turtlebot_gazebo
+    │   ├── ...
+    ├──                                # Your packages and direcotries
+    |
+    ├── World                          # world files
+    │   ├── ...
+    ├── ShellScripts                   # shell scripts files
+    │   ├── ...
+    ├──RvizConfig                      # rviz configuration files
+    │   ├── ...
+    ├──wall_follower                   # wall_follower C++ node
+    │   ├── src/wall_follower.cpp
+    │   ├── ...
+    ├──pick_objects                    # pick_objects C++ node
+    │   ├── src/pick_objects.cpp
+    │   ├── ...
+    ├──add_markers                     # add_marker C++ node
+    │   ├── src/add_markers.cpp
+    │   ├── ...
+    └──
+```
+
+### Troubleshooting
+
+Q: What if my catkin_ws failed to build? 
+
+A: There may be many reasons as to why your catkin_ws failed to build! Here are some common solutions to this problem:
+
+Make sure you installed all the package dependencies with rosdep -i install <package name>.
+
+Make sure you only have a single version of each package.
+
+You can save your old catkin_ws and start over with a new one.
+
+Look at the messages being generated on your terminal to identify the error.
+
+
+
