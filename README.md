@@ -293,5 +293,10 @@ You can save your old catkin_ws and start over with a new one.
 
 Look at the messages being generated on your terminal to identify the error.
 
+## Testing SLAM
+
+The next task of this project is to autonomously map the environment you designed earlier with the Building Editor in Gazebo. But before you tackle autonomous mapping, it’s important to test if you are able to manually perform SLAM by teleoperating your robot. The goal of this step is to manually test SLAM. 
+
+Write a shell script test_slam.sh that will deploy a turtlebot inside your environment, control it with keyboard commands, interface it with a SLAM package, and visualize the map in rviz. We will be using turtlebot for this project but feel free to use your personalized robot to make your project stand out! 
 
 
