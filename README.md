@@ -138,6 +138,18 @@ Follow these steps to successfully simulate a home service robot:
 - Add markers to the view_navigation.launch file and save it as a new rviz configuration
 - Create a home_service.sh file that launches the turtlebot, AMCL, rviz config file, pick_objects and add_markers nodes
 
+## Working Environment
 
+The home service robot project has been tested in three different working environments:
+- Udacity Workspace: LUbuntu
+- Virtual Machine: LUbuntu 
+- Jetson Tx2: Ubuntu
+
+Therefore, for this project, you have the choice of working on the Udacity Workspace which is highly recommended. Optionally you can chose to work on your Virtual Machine, or Jetson TX2. Keep in mind that the location of your catkin workspace is different in each. Here’s the directory of the catkin_ws for each of the provided working environments: 
+- Lubuntu Udacity Workspace: /home/workspace
+- LUbuntu VM: /home/robond
+- Jetson Tx2: /home/nvidia
+
+Working in the provided Udacity Workspace is highly recommended, because it's has a dedicated GPU and we can provide support for it. If you choose to work in the Udacity Workspace, refer to these instructions, move to the next concept, enable GPU, and GO TO DESKTOP!
 
 
