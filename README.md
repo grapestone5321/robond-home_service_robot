@@ -342,3 +342,16 @@ Notice that map shown here is not 100% accurate, but still resembles the environ
 - increasing the number of particles.
 
 You can try tweaking these parameters and/or any other parameter you think should be changed. You can also leave them as default if you wish, as long as you think your robot will be able to travel to two different positions that you will choose at a later time. 
+
+## Testing Navigation
+
+The next task of this project is to pick two different goals and test your robot's ability to reach them and orient itself with respect to them. We'll refer to these goals as the pickup and drop off zones. This section is only for testing purposes to make sure our robot is able to reach these positions before autonomously commanding it to travel towards them. 
+
+We will be using the ROS Navigation stack, which is based on the Dijkstra's, a variant of the Uniform Cost Search algorithm, to plan our robot trajectory from start to goal position. The ROS navigation stack permits your robot to avoid any obstacle on its path by re-planning a new trajectory once your robot encounters them. You are familiar with this navigation stack from the localization project where you interfaced with it and sent a specific goal for your robot to reach while localizing itself with AMCL. If you are planning to modify the ROS navigation algorithm or you are curious to know how it's done, take a look at this official tutorial which teaches you how to write a global path planner as a plugin in ROS. 
+
+### Test it
+
+Once you launch all the nodes, you will initially see the particles around your robot, which means that AMCL recognizes the initial robot pose. Now, manually point out to two different goals, one at a time, and direct your robot to reach them and orient itself with respect to them. 
+
+
+
