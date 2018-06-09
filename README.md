@@ -334,4 +334,11 @@ For this project, you will be given the C++ wall_follower node. However, if you 
 
 Here’s the given version of the wall_follower node that you can grab from the GitHub repo. Go through this code and the comments to understand how the measurements are processed and how the wheels are actuated. This code implements the left-hand wall follower algorithm described earlier, but it’s a bit more optimized to avoid obstacles.
 
+### gmapping Parameters
 
+Notice that map shown here is not 100% accurate, but still resembles the environment. That’s because the gmapping parameters values used were the default values. In general, it’s essential to tune them in order to get a 100% accurate map. These parameters are all listed under the gmapping documentation, where you can look at them yourself. If you experiment with some of these parameter values, you should be able to get better maps. For example, you might try,
+- reducing the angularUpdate and linearUpdate values so the map gets updated for smaller ranges of movements,
+- reducing the x and y limits, which represent the initial map size, 
+- increasing the number of particles.
+
+You can try tweaking these parameters and/or any other parameter you think should be changed. You can also leave them as default if you wish, as long as you think your robot will be able to travel to two different positions that you will choose at a later time. 
