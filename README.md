@@ -299,4 +299,7 @@ The next task of this project is to autonomously map the environment you designe
 
 Write a shell script test_slam.sh that will deploy a turtlebot inside your environment, control it with keyboard commands, interface it with a SLAM package, and visualize the map in rviz. We will be using turtlebot for this project but feel free to use your personalized robot to make your project stand out! 
 
+### Launch it
+
+Launch your test_slam.sh file, search for the xterminal running the keyboard_teleop node, and start controlling your robot. You are not required to fully map your environment but just make sure everything is working fine. You might notice that the map is low quality, but don’t worry about that for now. If everything seems to be working fine, move on to the next concept!
 
