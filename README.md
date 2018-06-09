@@ -303,3 +303,35 @@ Write a shell script test_slam.sh that will deploy a turtlebot inside your envir
 
 Launch your test_slam.sh file, search for the xterminal running the keyboard_teleop node, and start controlling your robot. You are not required to fully map your environment but just make sure everything is working fine. You might notice that the map is low quality, but don’t worry about that for now. If everything seems to be working fine, move on to the next concept!
 
+
+## Wall Follower
+
+Now that you’ve manually performed SLAM, it’s time to automate the process and let your robot follow the walls and autonomously map the environment while avoiding obstacles. To do so, we’ll get rid of the keyboard teleop node and instead interface the robot with a wall_follower node.
+
+### Wall Follower Algorithm
+
+You might be wondering what’s a wall follower algorithm? A wall follower algorithm is a common algorithm that solves mazes. This algorithm is also known as the left-hand rule algorithm or the right-hand rule algorithm depending on which is your priority. The wall follower can only solve mazes with connected walls, where the robot is guaranteed to reach the exit of the maze after traversing close to walls. We will implement this basic algorithm in our environment to travel close to the walls and autonomously map it. 
+
+Here’s the wall follower algorithm(the left-hand one) at a high level:
+
+``` bash
+If left is free:
+    Turn Left
+Else if left is occupied and straight is free:
+    Go Straight
+Else if left and straight are occupied:
+    Turn Right 
+Else if left/right/straight are occupied or you crashed:
+    Turn 180 degrees
+```
+
+
+This algorithm has a lot of disadvantages because of the restricted space it can operate in. In other words, this algorithm will fail in open or infinitely large environments. Usually, the best algorithms for autonomous mapping are the ones that go in pursuit of undiscovered areas or unknown grid cells. 
+
+### Wall Follower node
+
+For this project, you will be given the C++ wall_follower node. However, if you are up to the challenge, you can code it yourself. To do so, you will need to subscribe to the laser measurements of the robot and process them. To do this, place the robot in front of different blocks, then read back the measurements. This way you can identify the robot’s left side, right side, and forward side as well as distinguish between objects and free spaces. After processing the measurements, you must send your robot to the corresponding direction by publishing driving commands to actuate its wheels. 
+
+Here’s the given version of the wall_follower node that you can grab from the GitHub repo. Go through this code and the comments to understand how the measurements are processed and how the wheels are actuated. This code implements the left-hand wall follower algorithm described earlier, but it’s a bit more optimized to avoid obstacles.
+
+
