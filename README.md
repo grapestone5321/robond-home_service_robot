@@ -431,6 +431,24 @@ You will need to first run this node and visualize the markers in rviz. Then you
 
 Later you will be able to combine this node with the pick_objects node coded earlier to simulate the full home service robot. 
 
+## Putting it all Together
 
+Now it’s time to simulate a full home service robot capable of navigating to pick up and deliver virtual objects. To do so, the add_markers and pick_objects node should be communicating. Or, more precisely, the add_markers node should subscribe to your odometry to keep track of your robot pose. 
+
+Modify the add_markers node as follows:
+- Initially show the marker at the pickup zone
+- Hide the marker once your robot reaches the pickup zone 
+- Wait 5 seconds to simulate a pickup
+- Show the marker at the drop off zone once your robot reaches it 
+
+### Hint
+
+You might need to define a threshold for the position if the robot’s odometry values are noisy.
+
+### Note
+
+There are many ways to solve this problem. To establish communications between the robot and the markers, one method already mentioned is to let your add_markers node subscribe to your robot odometry and keep track of your robot pose. 
+
+Other solutions to this problem might be to use ROS parameters, subscribe to the AMCL pose, or even to publish a new variable that indicates whether or not your robot is at the pickup or drop off zone. Feel free to solve this problem in any way you wish.
 
 
