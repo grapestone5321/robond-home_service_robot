@@ -415,3 +415,22 @@ You will need to modify this code and edit its node name to pick_objects. Then, 
 
 The first goal should be your desired pickup goal and the second goal should be your desired drop off goal. The robot has to travel to the desired pickup zone, display a message that it reached its destination, wait 5 seconds, travel to the desired drop off zone, and display a message that it reached the drop off zone. 
 
+
+## Modeling Virtual Objects
+
+The final task of this project is to model a virtual object with markers in rviz. The virtual object is the one being picked and delivered by the robot, thus it should first appear in its pickup zone, and then in its drop off zone once the robot reaches it. 
+
+First, let’s see how markers can be drawn in rviz. Luckily, there’s an official ROS tutorial that teaches you how to do it. The tutorial is an excellent reference and includes a C++ node capable of drawing basic shapes like arrows, cubes, cylinders, and spheres in rviz. You will learn how to define a marker, scale it, define its position and orientation, and finally publish it to rviz. The node included in the tutorial will publish a different shape each second at the same position and orientation. Check out the tutorial and go through the documentation to get started. 
+
+You will need to first run this node and visualize the markers in rviz. Then you’ll need to modify the code and publish a single shape example: a cube. Your code should follow this algorithm:
+- Publish the marker at the pickup zone 
+- Pause 5 seconds
+- Hide the marker 
+- Pause 5 seconds 
+- Publish the marker at the drop off zone 
+
+Later you will be able to combine this node with the pick_objects node coded earlier to simulate the full home service robot. 
+
+
+
+
