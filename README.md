@@ -1,4 +1,4 @@
-# robond-home_service_robot
+# Robond Home Service Robot
 Udacity robond home service robot project
 
 ## Project Submission
